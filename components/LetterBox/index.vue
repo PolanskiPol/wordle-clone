@@ -1,22 +1,20 @@
-<script setup>
-  const props = defineProps(["boxid", "letterid"]);
+<script lang="ts" setup>
+  const props = defineProps(["box_id", "letter_id"]);
 
-  const chosenWord = useState('chosenWord', () => "ABCDE");
+  const { c_gameState, gameState, setGameState } = useGameState();
+  const { c_chosenWord, chosenWord, setChosenWord } = useChosenWord();
+  const { c_appLightMode, appLightMode, setAppLightMode } = useAppLightMode();
+  const { c_writtenWords, writtenWords, resetWrittenWords, addWrittenWord } = useWrittenWords();
 
-  const c_boxColorClass = useCookie(`boxColorClass${props.boxid}${props.letterid}`, { default: () => "" });
-  const c_letter = useCookie(`letter${props.boxid}${props.letterid}`, { default: () => "" });
-  const c_writtenWords = useCookie('writtenWords', { default: () => "" });
-  const c_gameState = useCookie('gameState', { default: () => 0 });
-  const c_appLightMode = useCookie('appLightMode', { default: () => "light" });
-
-  const appLightMode = useState('appLightMode', () => c_appLightMode.value);
-  const gameState = useState('gameState', () => c_gameState.value);
-  const boxColorClass = useState(`boxColorClass${props.boxid}${props.letterid}`, () => c_boxColorClass.value);
-  const letter = useState(`letter${props.boxid}${props.letterid}`, () => c_letter.value);
-  const writtenWords = useState('writtenWords', () => c_writtenWords.value);
+  // The following states/cookies are only relevant to this unique component and I don't need to read/write them outside.
+  // In the rare case that I'd need to, I'd reconsider adding them the the 'states' composable.
+  const c_boxColorClass = useCookie(`boxColorClass${props.box_id}${props.letter_id}`, { default: () => "" });
+  const boxColorClass = useState(`boxColorClass${props.box_id}${props.letter_id}`, () => c_boxColorClass.value);
+  const c_letter = useCookie(`letter${props.box_id}${props.letter_id}`, { default: () => "" });
+  const letter = useState(`letter${props.box_id}${props.letter_id}`, () => c_letter.value);
 
   watch(gameState, (newGameState) => {
-    if(newGameState == 0){
+    if(newGameState == gameStates.NOT_STARTED){
       boxColorClass.value = "";
       c_boxColorClass.value = boxColorClass.value;
 
@@ -27,13 +25,14 @@
 
   watch(writtenWords, (newWrittenWords) => {
     let writtenWordsSplit = newWrittenWords.split("|@|");
-    if(writtenWordsSplit[parseInt(props.boxid)] != "" && writtenWordsSplit[parseInt(props.boxid)] != null) {
-      letter.value = writtenWordsSplit[parseInt(props.boxid)][parseInt(props.letterid)].toUpperCase();
+    if(writtenWordsSplit[parseInt(props.box_id)] != "" && writtenWordsSplit[parseInt(props.box_id)] != null) {
+      //console.log("writtenWordsSplit: ", writtenWordsSplit)
+      letter.value = writtenWordsSplit[parseInt(props.box_id)][parseInt(props.letter_id)].toUpperCase();
       c_letter.value = letter.value;
 
-      if(chosenWord.value[props.letterid].toUpperCase() == writtenWordsSplit[parseInt(props.boxid)][parseInt(props.letterid)].toUpperCase()){
+      if(chosenWord.value[props.letter_id].toUpperCase() == writtenWordsSplit[parseInt(props.box_id)][parseInt(props.letter_id)].toUpperCase()){
         boxColorClass.value = "letter-box-correct";
-      } else if(chosenWord.value.toUpperCase().includes(writtenWordsSplit[parseInt(props.boxid)][parseInt(props.letterid)].toUpperCase())){
+      } else if(chosenWord.value.toUpperCase().includes(writtenWordsSplit[parseInt(props.box_id)][parseInt(props.letter_id)].toUpperCase())){
         boxColorClass.value = "letter-box-position";
       } else {
         boxColorClass.value = "letter-box-incorrect";

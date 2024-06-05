@@ -18,6 +18,27 @@ h1 {
     margin: 0px;
 }
 
+a {
+    color: #369aff;
+    text-decoration: none;
+}
+
+a:link {
+    color: #369aff;
+}
+
+a:active {
+    color: #88abff;
+}
+
+a:hover {
+    color: #3b7ec2;
+}
+
+a:visited {
+    color: #5061dd;
+}
+
 .collapse {
     visibility: collapse;
     max-width: 0px;
@@ -63,6 +84,23 @@ h1 {
     width: 100%;
     height: 100px;
     padding-top: 20px;
+    font-size: 24px;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    font-size: 20px;
+}
+
+.footer-element {
+    margin-left: 25px;
+    margin-right: 25px;
 }
 
 .game-initiator {
@@ -217,4 +255,32 @@ h1 {
 .letter-box-dark {
     outline-color: rgb(255, 255, 255);
     background-color: rgb(33, 33, 33);
+}
+
+.how-to-play {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+}
+
+.how-to-play-title {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* TRANSITIONS -------------------------*/
+
+.page-enter-active, .page-leave-active {
+    transition: all 0.45s;
+}
+
+.page-enter-from, .page-leave-to {
+    opacity: 0.1;
+    filter: blur(20px);
+    transform: rotateY(180deg);
 }
