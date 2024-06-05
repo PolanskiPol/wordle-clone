@@ -3,7 +3,7 @@
 Clon del popular juego de adivinar palabras Wordle.
 
 Como jugar: 
-1. Para ganar debes de averiguar la palabra. La palabra será generada en inglés
+1. Para ganar debes de averiguar la palabra
 2. La palabra será generada en inglés
 3. Si la letra se encuentra en la palabra y está en la posición correcta, se marcará de color verde
 4. Si la letra se encuentra en la palabra pero no está en la posición correcta, se marcará de color amarillo
