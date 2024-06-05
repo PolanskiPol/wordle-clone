@@ -1,75 +1,17 @@
-# Nuxt 3 Minimal Starter
+# Diseñado por Pablo Romero como prototipo para investigar Vue/Nuxt
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Clon del popular juego de adivinar palabras Wordle.
 
-## Setup
+Como jugar: 
+1. Para ganar debes de averiguar la palabra. La palabra será generada en inglés
+2. La palabra será generada en inglés
+3. Si la letra se encuentra en la palabra y está en la posición correcta, se marcará de color verde
+4. Si la letra se encuentra en la palabra pero no está en la posición correcta, se marcará de color amarillo
+5. Si la letra no se encuentra en la palabra, se marcará de color rojo
+6. Tienes un total de 6 intentos
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
 
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Diseñado por Pablo Romero
+### [Jugar ahora (solo HTTP)](http://18.101.59.134/)
+### 2024
