@@ -1,0 +1,220 @@
+@font-face {
+    font-family: Rubik;
+    src: url(Rubik-Regular.ttf)
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0px;
+    font-family: Rubik;
+}
+
+p {
+    margin: 0px;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.collapse {
+    visibility: collapse;
+    max-width: 0px;
+    max-height: 0px;
+}
+
+.background {
+    background-color: #f6f6f6;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.background-light {
+    background-color: #f6f6f6;
+    color: #000;
+}
+
+.background-dark {
+    background-color: rgb(25, 25, 25);
+    color: #FFF;
+}
+
+.tr-1000 {
+    transition: all 1s;
+}
+
+.tr-750 {
+    transition: all 1s;
+}
+
+.tr-500 {
+    transition: all 1s;
+}
+
+.tr-250 {
+    transition: all 1s;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+}
+
+.game-initiator {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.game-initiator-button {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 42px;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 24px;
+    border-radius: 10px;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.game-initiator-button-light {
+    color:#000;
+    background-color: #efefef;
+    border-color: #c9c9c9;
+}
+
+.game-initiator-button-dark {
+    color:#ffffff;
+    background-color: #323232;
+    border-color: rgb(227, 227, 227)
+}
+
+.game-initiator-searching {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 42px;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 24px;
+}
+
+.game-initiator-searching-light {
+    color:#000000;
+}
+
+.game-initiator-searching-dark {
+    color:#ffffff;
+}
+
+.game-initiator-input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 350px;
+    height: 42px;
+    text-align: center;
+    font-family: Rubik;
+    font-size: 24px;
+    border-radius: 10px;
+    border-style: solid;
+    text-transform: uppercase;
+}
+
+.game-initiator-input::placeholder {
+    text-transform: none;
+}
+
+.game-initiator-input-light {
+    color:#000;
+    background-color: #efefef;
+    border-color: #c9c9c9;
+}
+
+.game-initiator-input-dark {
+    color:#ffffff;
+    background-color: #323232;
+    border-color: rgb(227, 227, 227)
+}
+
+.game-initiator-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.game-initiator-end > .game-initiator-button {
+    justify-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.game-initiator-end > .game-initiator-searching {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px;
+}
+
+.light-mode-button {
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.letter-box-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.letter-box {
+    padding: 10px;
+    border-radius: 10px;
+    outline-width: 2px;
+    outline-style: solid;
+    width: 70px;
+    height: 70px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 59px;
+    text-align: center;
+}
+
+.letter-box-correct {
+    background-color: #2fff00 !important;
+}
+
+.letter-box-incorrect {
+    background-color: #ff0000 !important;
+}
+
+.letter-box-position {
+    background-color: #ffb700 !important;
+}
+
+.letter-boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-box-light {
+    outline-color: rgb(33, 33, 33);
+    background-color: rgb(227, 227, 227);
+}
+
+.letter-box-dark {
+    outline-color: rgb(255, 255, 255);
+    background-color: rgb(33, 33, 33);
+}
